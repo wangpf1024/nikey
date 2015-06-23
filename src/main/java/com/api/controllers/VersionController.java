@@ -12,6 +12,7 @@ import sun.org.mozilla.javascript.internal.json.JsonParser;
 /**
  * Created by arvin on 2015/6/23.
  * Restful API : Version 控制层
+ * 查看版本号
  */
 
 @Path("api/version")
