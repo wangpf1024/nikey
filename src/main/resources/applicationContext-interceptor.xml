@@ -7,11 +7,10 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd"
-       default-lazy-init="true">
+       default-autowire="byName" default-lazy-init="false">
 
-       <context:annotation-config />
-
-       <context:component-scan base-package="com.api.controllers"/>
-
+       <context:component-scan base-package="com.api.interceptor">
+              <context:include-filter type="regex"   expression=".*Interceptor" />
+       </context:component-scan>
 
 </beans>

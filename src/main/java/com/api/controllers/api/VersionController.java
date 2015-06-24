@@ -1,6 +1,7 @@
 package com.api.controllers.api;
 
 import com.alibaba.fastjson.JSONObject;
+import com.api.annotations.APIAccessCheckRequired;
 import com.api.bean.Version;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Path;
@@ -18,6 +19,7 @@ public class VersionController {
 
     @Get("")
     @Post("")
+    @APIAccessCheckRequired
     public String get(Invocation invocation){
         Version v = new Version();
         v.setArtifactId("nikey");

@@ -3,6 +3,7 @@ package com.api.controllers;
 
 
 
+import com.api.annotations.APIAccessCheckRequired;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
@@ -18,6 +19,7 @@ import java.util.Map;
 
 @Path("")
 public class homeController {
+
 
     @Get("")
     @Post("")
