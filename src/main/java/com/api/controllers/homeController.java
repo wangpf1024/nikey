@@ -26,6 +26,9 @@ public class homeController {
     public String get(Invocation v){
         Map<String,Object> map = new HashMap<String, Object>();
         v.addModel("nikey", "Just do what you feel like");
+        if(true){
+            throw  new NullPointerException();
+        }
         return "home";
     };
 

@@ -17,6 +17,7 @@
           <file>file://$MODULE_DIR$/src/main/resources/dispatcher-servlet.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContext-interceptor.xml</file>
         </fileset>
       </configuration>
     </facet>
