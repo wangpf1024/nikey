@@ -3,7 +3,7 @@ package com.api.controllers;
 
 
 
-import com.api.annotations.APIAccessCheckRequired;
+import com.api.bean.Visitor;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
@@ -17,16 +17,14 @@ import java.util.Map;
  * 首页：后台数据 ，前台VM 展示  2015/06/23。
  */
 
-@Path("")
-public class homeController {
+@Path("visitor")
+public class VisitorController {
 
 
     @Get("")
     @Post("")
-    public String get(Invocation v){
-        Map<String,Object> map = new HashMap<String, Object>();
-        v.addModel("nikey", "Just do what you feel like");
-        return "home";
+    public String get(Visitor v){
+        return "@Hello World:"+v.getName();
     };
 
 

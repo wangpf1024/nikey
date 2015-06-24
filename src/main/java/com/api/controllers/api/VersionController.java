@@ -14,7 +14,7 @@ import net.paoding.rose.web.annotation.rest.Post;
  * 查看版本号
  */
 
-@Path("")
+@Path("version")
 public class VersionController {
 
     @Get("")
@@ -30,4 +30,5 @@ public class VersionController {
         v.setVersion("1.0-SNAPSHOT");
         return "@json:"+JSONObject.toJSON(v);
     };
+
 }
