@@ -2,12 +2,11 @@ package com.api.annotations;
 
 /**
  * Created by arvin on 2015/6/24.
- * API 访问注解
+ * 非空注解
  */
 import java.lang.annotation.*;
 
-@Target({ ElementType.TYPE, ElementType.METHOD })
+@Target( { ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Inherited
-public @interface APIAccessCheckRequired {}
+public @interface NotBlank {}

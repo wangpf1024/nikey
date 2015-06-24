@@ -1,16 +1,13 @@
 package com.api.controllers;
 
-
-
-
+import com.api.annotations.NotBlank;
 import com.api.bean.Visitor;
-import net.paoding.rose.web.Invocation;
+import net.paoding.rose.web.annotation.Param;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
 import net.paoding.rose.web.annotation.rest.Post;
 
-import java.util.HashMap;
-import java.util.Map;
+
 
 /**
  * Created by arvin on 2015/6/19.
@@ -23,7 +20,7 @@ public class VisitorController {
 
     @Get("")
     @Post("")
-    public String get(Visitor v){
+    public String get(@NotBlank @Param("name")String name,Visitor v){
         return "@Hello World:"+v.getName();
     };
 
