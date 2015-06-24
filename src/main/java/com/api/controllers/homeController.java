@@ -8,6 +8,8 @@ import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
 import net.paoding.rose.web.annotation.rest.Post;
+import net.paoding.rose.web.portal.Pipe;
+import net.paoding.rose.web.portal.Portal;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +30,5 @@ public class homeController {
         v.addModel("nikey", "Just do what you feel like");
         return "home";
     };
-
 
 }
