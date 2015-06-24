@@ -1,4 +1,4 @@
-package com.api.controllers;
+package com.api.validator;
 
 import com.api.annotations.NotBlank;
 import net.paoding.rose.web.Invocation;
@@ -10,7 +10,7 @@ import org.springframework.validation.Errors;
 
 /**
  * Created by arvin on 2015/6/24.
- * 统一的参数验证办法
+ * 统一的参数非空验证办法
  */
 public class NotBlankParamValidator implements ParamValidator {
 

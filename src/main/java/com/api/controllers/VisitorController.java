@@ -10,8 +10,8 @@ import net.paoding.rose.web.annotation.rest.Post;
 
 
 /**
- * Created by arvin on 2015/6/19.
- * 首页：后台数据 ，前台VM 展示  2015/06/23。
+ * Created by arvin on 2015/6/24
+ * 游客访问控制层
  */
 
 @Path("visitor")
