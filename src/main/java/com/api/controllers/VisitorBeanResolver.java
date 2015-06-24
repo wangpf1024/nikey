@@ -7,7 +7,7 @@ import net.paoding.rose.web.paramresolver.ParamResolver;
 
 /**
  * Created by arvin on 2015/6/24.
- *
+ * 自定义参数转换javabean
  */
 public class VisitorBeanResolver implements ParamResolver {
 
