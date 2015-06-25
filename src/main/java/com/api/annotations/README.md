@@ -1,6 +1,3 @@
-@author 王鹏飞          
-@since  2015/6/25
-
 #java注解
 
 定义：注解的定义使用关键词 @interface ,并在上面一行注明@Rentention(arg) 或者@Target(args) , 样例如下：
