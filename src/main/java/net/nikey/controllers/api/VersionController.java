@@ -1,8 +1,8 @@
-package com.api.controllers.api;
+package net.nikey.controllers.api;
 
 import com.alibaba.fastjson.JSONObject;
-import com.api.annotations.APIAccessCheckRequired;
-import com.api.bean.Version;
+import net.nikey.annotations.APIAccessCheckRequired;
+import net.nikey.bean.Version;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;

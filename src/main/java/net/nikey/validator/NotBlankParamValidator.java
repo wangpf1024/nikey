@@ -1,6 +1,6 @@
-package com.api.validator;
+package net.nikey.validator;
 
-import com.api.annotations.NotBlank;
+import net.nikey.annotations.NotBlank;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.ParamValidator;
 import net.paoding.rose.web.paramresolver.ParamMetaData;

@@ -1,6 +1,6 @@
-package com.api.interceptor;
+package net.nikey.interceptor;
 
-import com.api.annotations.APIAccessCheckRequired;
+import net.nikey.annotations.APIAccessCheckRequired;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
 import net.paoding.rose.web.Invocation;
 

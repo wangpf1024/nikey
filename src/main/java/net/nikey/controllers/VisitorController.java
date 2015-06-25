@@ -1,7 +1,7 @@
-package com.api.controllers;
+package net.nikey.controllers;
 
-import com.api.annotations.NotBlank;
-import com.api.bean.Visitor;
+import net.nikey.annotations.NotBlank;
+import net.nikey.bean.Visitor;
 import net.paoding.rose.web.annotation.Param;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;

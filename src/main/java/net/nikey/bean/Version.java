@@ -1,4 +1,4 @@
-package com.api.bean;
+package net.nikey.bean;
 
 /**
  * Created by arvin on 2015/6/23.

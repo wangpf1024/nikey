@@ -1,4 +1,4 @@
-package com.api.annotations;
+package net.nikey.annotations;
 
 /**
  * Created by arvin on 2015/6/24.

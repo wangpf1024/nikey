@@ -1,4 +1,4 @@
-package com.api.controllers;
+package net.nikey.controllers;
 
 import net.paoding.rose.web.ControllerErrorHandler;
 import net.paoding.rose.web.Invocation;

@@ -1,6 +1,6 @@
-package com.api.controllers;
+package net.nikey.controllers;
 
-import com.api.bean.Visitor;
+import net.nikey.bean.Visitor;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.paramresolver.ParamMetaData;
 import net.paoding.rose.web.paramresolver.ParamResolver;
