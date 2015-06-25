@@ -4,6 +4,7 @@ package com.api.bean;
  * Created by arvin on 2015/6/23.
  * API 版本信息
  * @author 王鹏飞
+ * @version 0.0.1
  * @since  2015/6/23
  */
 public class Version {

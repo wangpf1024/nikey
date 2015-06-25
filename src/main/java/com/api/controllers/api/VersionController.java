@@ -13,6 +13,7 @@ import net.paoding.rose.web.annotation.rest.Post;
  * Restful API : Version 控制层
  * 查看版本号
  * @author 王鹏飞
+ * @version 0.0.1
  * @since  2015/6/23
  */
 
