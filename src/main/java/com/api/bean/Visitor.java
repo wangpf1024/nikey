@@ -3,6 +3,8 @@ package com.api.bean;
 /**
  * Created by arvin on 2015/6/24.
  * 游客信息
+ * @author 王鹏飞
+ * @since  2015/6/24
  */
 public class Visitor {
 

@@ -8,6 +8,8 @@ import net.paoding.rose.web.paramresolver.ParamResolver;
 /**
  * Created by arvin on 2015/6/24.
  * 自定义参数转换javabean
+ * @author 王鹏飞
+ * @since  2015/6/24
  */
 public class VisitorBeanResolver implements ParamResolver {
 

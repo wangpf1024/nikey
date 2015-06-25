@@ -12,6 +12,8 @@ import net.paoding.rose.web.annotation.rest.Post;
 /**
  * Created by arvin on 2015/6/24
  * 游客访问控制层
+ * @author 王鹏飞
+ * @since  2015/6/24
  */
 
 @Path("visitor")
