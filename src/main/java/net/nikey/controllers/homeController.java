@@ -27,7 +27,7 @@ public class homeController {
     @Post("")
     public String get(Invocation v){
         Map<String,Object> map = new HashMap<String, Object>();
-        v.addModel("slogan", "what you feel like");
+        v.addModel("slogan", "Just do what you feel like");
         return "home";
     };
 
