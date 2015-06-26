@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Nikey</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="js/plugin/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">Nikey</h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li class="active" data-target="home"><a href="#home">home</a></li>
+                            <li  data-target="Features"><a href="#Features">Features</a></li>
+                            <li  data-target="Contact"><a href="#Contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="inner cover" id="home">
+
+                <img class="img-thumbnail" src="img/host.JPG" alt="Generic placeholder image" width="140" height="140">
+
+                <h1 class="cover-heading">Do</h1>
+                <p class="lead">$slogan</p>
+
+                <p class="lead"><h4>java 软件开发工程师</h4></p>
+                <p class="lead">王鹏飞 | 男 | 未婚 | 1990 年5月生 | 户口：山东 | 现居：北京</p>
+
+                <p class="lead"><h4>教育经历</h4></p>
+
+                <p class="lead">
+                    2010/09 ~ 2013/07</br>
+                    北京理工大学 | 计算机科学与技术 | 大专
+                </p>
+
+                <p class="lead"><h4>培训经历</h4></p>
+
+                <p class="lead">
+                    2012/12 ~ 今</br>
+                    华尔街英语 | Survival-Milestone , 商务英语</br>
+                    2008/08 ~ 2010/09</br>
+                    迅腾国际 | JAVAEE高级软件工程师 | 企业级JAVAEE架构师
+                </p>
+
+            </div>
+
+
+            <div class="inner cover" id="Features">
+
+                <p class="lead"><h4>专业技能</h4></p>
+                <p class="lead"><h5>back-end</h5></p>
+                <p class="lead">
+                    Rose,Spring,Struts,
+                    Hibernate,iBatis,
+                    HSF.Ehcache,
+                    ActiveMQ,WebService,
+                    Htmlparser,
+                    Velocity,JSP,JSTL,EL
+                </p>
+                <p class="lead"><h5>front-end</h5></p>
+                <p class="lead">
+                    HTML,HTML5,
+                    JavaScript,JQuery,EXT,
+                    Bootstrap,Backbone,CURL,NodeJS
+                </p>
+                <p class="lead"><h5>database</h5></p>
+                <p class="lead">
+                    MySql,  Oracle,  MongoDB
+                </p>
+                <p class="lead"><h5>tools</h5></p>
+                <p class="lead">
+                    Eclipse,IDEA,Tomcat, Jetty, PLSQL,  SQLyogEnt,  SVN,  Git ,Shell,Nginx, etc.
+                </p>
+
+
+                <p class="lead"><h4>工作经历 | 4 年 </h4></p>
+                <p class="lead">
+                    <h5>2014/05 – 至今 | 北京直立人科技有限公司 |  java 开发</h5>
+                    <h5>2010/10 -- 2014/03 | 北京新华联合数据服务有限公司 | java 开发</h5>
+                </p>
+
+                <p class="lead"><h4>项目经验</h4></p>
+
+                <p class="lead"><h5>社群汇-微信应用</h5></p>
+                <p class="lead">
+                </p>
+
+                <p class="lead"><h5>组织力信息化平台-企业内部高效协作的信息化管理平台</h5></p>
+                <p class="lead">
+                </p>
+
+                <p class="lead"><h5>交易系统-B2C电子商务平台</h5></p>
+                <p class="lead">
+                </p>
+
+                <p class="lead"><h5>结算系统-交易结算和财务管理平台</h5></p>
+                <p class="lead">
+                </p>
+
+                <p class="lead"><h5>工程检测管理系统-工程检测数据管理平台</h5></p>
+                <p class="lead">
+                </p>
+
+            </div>
+
+            <div class="inner cover" id="Contact">
+
+                <!--<p class="lead"><h4>联系方式</h4></p>-->
+                <p class="lead">
+                    手机：13522921121</br>
+                    E-mail：wangpfitta@163.com</br>
+                    Github：<a href="https://github.com/ittarvin">@ittarvin</a><br>
+                    个人主页：<a href="http://nikey.net">http://nikey.net</a></br>
+                </p>
+
+            </div>
+
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Cover template for <a href="http://nikey.net">Nikey</a>, by <a href="https://github.com/ittarvin">@ittarvin</a>.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/plugin/jquery/jquery-1.11.3.min.js"></script>
+<script src="js/plugin/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+<script>
+$().ready(function(){
+
+    var target = $('.cover-container .active').data('target');
+
+    $("#"+target).show();
+
+    $('.cover-container .nav').on('click','li',function(){
+        var cur = $(this);
+        var show_target = cur.closest('ul').find('.active').data('target')
+        cur.closest('ul').find('.active').removeClass('active')
+        $('#'+show_target).hide();
+        cur.addClass('active');
+        var hide_target = cur.data('target')
+        $('#'+hide_target).show();
+    });
+
+});
+
+</script>
+
+</body>
+</html>
