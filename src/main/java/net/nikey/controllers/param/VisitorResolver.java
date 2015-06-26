@@ -1,4 +1,4 @@
-package net.nikey.controllers.visitor;
+package net.nikey.controllers.param;
 
 import net.nikey.bean.Visitor;
 import net.paoding.rose.web.Invocation;
@@ -12,7 +12,7 @@ import net.paoding.rose.web.paramresolver.ParamResolver;
  * @version 0.0.1
  * @since  2015/6/24
  */
-public class VisitorBeanResolver implements ParamResolver {
+public class VisitorResolver implements ParamResolver {
 
     public boolean supports(ParamMetaData metaData) {
         return Visitor.class == metaData.getParamType();

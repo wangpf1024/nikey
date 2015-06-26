@@ -18,12 +18,12 @@ import net.paoding.rose.web.annotation.rest.Post;
  */
 
 @Path("")
-public class VersionController {
+public class IndexController {
 
     @Get("")
     @Post("")
     @APIAccessCheckRequired
-    public String get(Invocation invocation){
+    public String index(Invocation invocation){
         Version v = new Version();
         v.setArtifactId("nikey");
         v.setGroupId("nikey");

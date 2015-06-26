@@ -18,12 +18,12 @@ import net.paoding.rose.web.annotation.rest.Post;
  */
 
 @Path("")
-public class VisitorController {
+public class IndexController {
 
 
     @Get("")
     @Post("")
-    public String get(@NotBlank @Param("name")String name,Visitor v){
+    public String index(@NotBlank @Param("name")String name,Visitor v){
         return "@Hello World:"+v.getName();
     };
 
