@@ -1,4 +1,4 @@
-package net.nikey.controllers;
+package net.nikey.controllers.visitor;
 
 import net.nikey.annotations.NotBlank;
 import net.nikey.bean.Visitor;
@@ -17,7 +17,7 @@ import net.paoding.rose.web.annotation.rest.Post;
  * @since  2015/6/24
  */
 
-@Path("visitor")
+@Path("")
 public class VisitorController {
 
 

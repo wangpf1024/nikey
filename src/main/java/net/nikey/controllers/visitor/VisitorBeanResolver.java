@@ -1,4 +1,4 @@
-package net.nikey.controllers;
+package net.nikey.controllers.visitor;
 
 import net.nikey.bean.Visitor;
 import net.paoding.rose.web.Invocation;

@@ -17,7 +17,7 @@ import net.paoding.rose.web.annotation.rest.Post;
  * @since  2015/6/23
  */
 
-@Path("version")
+@Path("")
 public class VersionController {
 
     @Get("")
