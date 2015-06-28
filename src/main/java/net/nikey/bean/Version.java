@@ -9,12 +9,21 @@ package net.nikey.bean;
  */
 public class Version {
 
+    private int id;
     private String modelVersion;
     private String groupId;
     private String artifactId;
     private String packaging;
     private String name;
     private String version;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getModelVersion() {
         return modelVersion;
@@ -40,20 +49,20 @@ public class Version {
         this.artifactId = artifactId;
     }
 
-    public String getPackaging() {
-        return packaging;
-    }
-
-    public void setPackaging(String packaging) {
-        this.packaging = packaging;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPackaging() {
+        return packaging;
+    }
+
+    public void setPackaging(String packaging) {
+        this.packaging = packaging;
     }
 
     public String getVersion() {
