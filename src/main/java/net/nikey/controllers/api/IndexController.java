@@ -47,7 +47,7 @@ public class IndexController {
     @Post("/add")
     @Get("/add")
     @APIAccessCheckRequired
-    public String add(Invocation invocation,@NotBlank Version v){
+    public String add(Invocation invocation,Version v){
         return "@"+v.getId();
     };
 
