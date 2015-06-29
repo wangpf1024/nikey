@@ -33,8 +33,9 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item" href="/">Nikey</a>
-            <a class="blog-nav-item active" href="/blog">home</a>
+            <a class="blog-nav-item" href="/">Home</a>
+            <a class="blog-nav-item" href="/api">API</a>
+            <a class="blog-nav-item active" href="/blog">Blog</a>
         </nav>
     </div>
 </div>
