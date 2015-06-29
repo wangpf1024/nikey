@@ -1,5 +1,9 @@
 package net.docs.design.pattern.factorymethod.common;
 
+import net.docs.design.pattern.factorymethod.MailSender;
+import net.docs.design.pattern.factorymethod.Sender;
+import net.docs.design.pattern.factorymethod.SmsSender;
+
 /**
  * 普通工厂模式
  *
