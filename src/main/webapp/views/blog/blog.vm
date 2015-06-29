@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/blog.css" rel="stylesheet">
+    <link href="css/nikey.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -33,6 +34,7 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
+            <img src="img/logo.ico" class="img-circle blog_logo" alt="Nikey">
             <a class="blog-nav-item" href="/">Home</a>
             <a class="blog-nav-item" href="/api">API</a>
             <a class="blog-nav-item active" href="/blog">Blog</a>
