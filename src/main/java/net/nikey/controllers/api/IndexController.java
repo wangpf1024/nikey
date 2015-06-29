@@ -12,8 +12,7 @@ import net.paoding.rose.web.annotation.rest.Post;
 
 /**
  * Created by arvin on 2015/6/23.
- * Restful API : Version 控制层
- * 查看版本号
+ * 系统API
  * @author 王鹏飞
  * @version 0.0.2
  * @since  2015/6/23
