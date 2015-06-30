@@ -18,4 +18,8 @@
         </constructor-arg>
     </bean>
 
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="jredisConnectionFactory"></property>
+    </bean>
+
 </beans>

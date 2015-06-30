@@ -32,6 +32,6 @@
         <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
     </bean>
 
-    <mongo:repositories base-package="net.nikey.mongo.repositories"/>
+    <mongo:repositories base-package="net.nikey.mongo"/>
 
 </beans>
