@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
     <link href="js/plugin/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/signin.css" rel="stylesheet">
+    <link href="css/starter-template.css" rel="stylesheet">
     <link href="css/nikey.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -29,29 +29,25 @@
     <![endif]-->
 </head>
 
-
 <body>
 
     #include("views/navbar_fixed_top.vm" )
 
 <div class="container">
 
-    <form class="form-signin" action="/signin" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" name="name" class="form-control" placeholder="Email address" required autofocus>
-        <p></p>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
+    <div class="starter-template">
+        <h1>$printout</h1>
+        <p class="lead"></p>
+    </div>
 
-</div> <!-- /container -->
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/plugin/jquery/jquery-1.11.3.min.js"></script>
+<script src="js/plugin/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/plugin/bootstrap-3.3.5-assets/ie10-viewport-bug-workaround.js"></script>

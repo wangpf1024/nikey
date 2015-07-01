@@ -11,6 +11,7 @@ import net.paoding.rose.web.annotation.Param;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
 import net.paoding.rose.web.annotation.rest.Post;
+import net.paoding.rose.web.var.Flash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
@@ -48,23 +49,25 @@ public class homeController {
 
 
 
-    @Get("/signIn")
+    @Get("/signin")
     public String signIn(Invocation v){
         return "signin";
     };
 
-    @Post("/signIn")
-    public String signIn(@Param("name") String name, @Param("pass") String pass,HttpServletResponse response) {
+    @Post("/signin")
+    public String signIn(Flash flash,@Param("name") String name, @Param("pass") String pass,HttpServletResponse response) {
         // add tracing cookie
         if (retwis.auth(name, pass)) {
             addAuthCookie(retwis.addAuth(name), name, response);
-            return "@ successful";
+            flash.add("printout", name + "Successful ");
+            return "r:/msg";
         }
         else if (StringUtils.hasText(name) || StringUtils.hasText(pass)) {
-           return "@ failed";
+            flash.add("printout","Failed ");
+           return "r:/msg";
         }
         // go back to sign in screen
-        return "r:/signIn";
+        return "r:/";
     }
 
 
@@ -79,26 +82,38 @@ public class homeController {
     }
 
 
-    @Get("/signUp")
+    @Get("/signup")
     public String signUp(Invocation v){
         return "signup";
     };
 
-    @Post("/signUp")
-    public String signUp( @Param("name")String name, @Param("pass") String pass,@Param("pass2")String pass2,HttpServletResponse response) {
+    @Post("/signup")
+    public String signUp(Flash flash,Invocation v,@Param("name")String name, @Param("pass") String pass,@Param("pass2")String pass2,HttpServletResponse response) {
 
         if (retwis.isUserValid(name)) {
-            return "@ user is already existed";
+            flash.add("printout", name + " has been used");
+            return "r:/msg";
         }
 
         if (!StringUtils.hasText(pass) || !StringUtils.hasText(pass2) || !pass.equals(pass2)) {
-            return "@ these passwords are not equal";
+            flash.add("printout", "passwords are not same");
+            return "r:/msg";
         }
 
         String auth = retwis.addUser(name, pass);
         addAuthCookie(auth, name, response);
-
-        return "r:/signIn";
+        flash.add("printout", " Congratulations !");
+        return "r:/msg";
     }
+
+    @Get("/msg")
+    public String msg(Invocation v,Flash flash){
+        String printout = "Sorry ! There is no message for you";
+        if(flash.get("printout") != null )
+            printout = flash.get("printout");
+
+        v.addModel("printout", printout);
+        return "msg";
+    };
 
 }
