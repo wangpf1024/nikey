@@ -13,33 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.nikey.bean;
+package net.nikey.redis;
 
 /**
- * Basic object indicating a range of objects to retrieve. Default is 10 objects (starting at zero).
- * 
- * @author Costin Leau
+ * keys π§æﬂ¿‡
  */
-public class Range {
+abstract class KeyUtils2 {
 
-	private static final int SIZE = 9;
-	public int begin = 0;
-	public int end = SIZE;
+	static final String UID = "uid:";
 
-	public Range() {
-	};
-
-	public Range(int begin, int end) {
-		this.begin = begin;
-		this.end = end;
+	public static String user(String name) {
+		return "user:" + name + ":uid";
 	}
 
-	public Range(int pageNumber) {
-		this.begin = 0;
-		this.end = pageNumber * SIZE;
+	static String uid(String uid) {
+		return UID + uid;
 	}
 
-	public int getPages() {
-		return (int) Math.round(Math.ceil(end / SIZE));
+	static String globalUid() {
+		return "global:uid";
+	}
+
+	static String users() {
+		return "users";
+	}
+
+	static String auth(String uid) {
+		return UID + uid + ":auth";
+	}
+
+	static String authKey(String auth) {
+		return "auth:" + auth;
 	}
 }

@@ -3,9 +3,9 @@ package net.nikey.controllers;
 
 
 
-import net.nikey.bean.RetwisSecurity;
+import net.nikey.bean.NikeySecurity;
 import net.nikey.interceptor.CookieInterceptor;
-import net.nikey.redis.RetwisRepository;
+import net.nikey.redis.UserRepository;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Param;
 import net.paoding.rose.web.annotation.Path;
@@ -32,13 +32,14 @@ import java.util.Map;
 public class homeController {
 
     @Autowired
-    private final RetwisRepository retwis;
+    private final UserRepository user;
 
     @Autowired
-    public homeController(RetwisRepository twitter) {
-        this.retwis = twitter;
+    public homeController(UserRepository user) {
+        this.user = user;
     }
 
+    //首页
     @Get("")
     @Post("")
     public String get(Invocation v){
@@ -48,18 +49,19 @@ public class homeController {
     };
 
 
-
+    //登录页面
     @Get("/signin")
     public String signIn(Invocation v){
         return "signin";
     };
 
+    //登录控制层
     @Post("/signin")
     public String signIn(Flash flash,@Param("name") String name, @Param("pass") String pass,HttpServletResponse response) {
         // add tracing cookie
-        if (retwis.auth(name, pass)) {
-            addAuthCookie(retwis.addAuth(name), name, response);
-            flash.add("printout", name + "Successful ");
+        if (user.auth(name, pass)) {
+            addAuthCookie(user.addAuth(name), name, response);
+            flash.add("printout", "  Congratulations ! ");
             return "r:/msg";
         }
         else if (StringUtils.hasText(name) || StringUtils.hasText(pass)) {
@@ -71,26 +73,32 @@ public class homeController {
     }
 
 
+    /**
+     * 添加cookie
+     * @param auth
+     * @param name
+     * @param response
+     */
     private void addAuthCookie(String auth, String name, HttpServletResponse response) {
-        RetwisSecurity.setUser(name, retwis.findUid(name));
-
+        NikeySecurity.setUser(name, user.findUid(name));
         Cookie cookie = new Cookie(CookieInterceptor.RETWIS_COOKIE, auth);
-        cookie.setComment("Retwis-J demo");
+        cookie.setComment("nikey - demo");
         // cookie valid for up to 1 week
         cookie.setMaxAge(60 * 60 * 24 * 7);
         response.addCookie(cookie);
     }
 
-
+    //注册页面
     @Get("/signup")
     public String signUp(Invocation v){
         return "signup";
     };
 
+    //注册控制
     @Post("/signup")
     public String signUp(Flash flash,Invocation v,@Param("name")String name, @Param("pass") String pass,@Param("pass2")String pass2,HttpServletResponse response) {
 
-        if (retwis.isUserValid(name)) {
+        if (user.isUserValid(name)) {
             flash.add("printout", name + " has been used");
             return "r:/msg";
         }
@@ -100,20 +108,22 @@ public class homeController {
             return "r:/msg";
         }
 
-        String auth = retwis.addUser(name, pass);
+        String auth = user.addUser(name, pass);
         addAuthCookie(auth, name, response);
-        flash.add("printout", " Congratulations !");
+        flash.add("printout", " Congratulations ! auth:" +auth);
         return "r:/msg";
     }
 
+    //消息显示页
     @Get("/msg")
     public String msg(Invocation v,Flash flash){
         String printout = "Sorry ! There is no message for you";
-        if(flash.get("printout") != null )
+        if(flash.get("printout") != null ){
             printout = flash.get("printout");
-
+        }
         v.addModel("printout", printout);
         return "msg";
     };
+
 
 }

@@ -23,14 +23,14 @@ import org.springframework.util.StringUtils;
  * 
  * @author Costin Leau
  */
-public abstract class RetwisSecurity {
+public abstract class NikeySecurity {
 
 	private static class UserInfo {
 		String name;
 		String uid;
 	}
 
-	private static final ThreadLocal<UserInfo> user = new NamedThreadLocal<UserInfo>("Retwis-id");
+	private static final ThreadLocal<UserInfo> user = new NamedThreadLocal<UserInfo>("Nikey-id");
 
 	public static String getName() {
 		UserInfo userInfo = user.get();
