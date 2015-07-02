@@ -178,6 +178,8 @@ public class UserRepository {
 		String authKey = KeyUtils.auth(uid);
 		String auth = valueOps.get(authKey);
 		//删除多个key，认证的依赖关系
+		//"uid:1:auth"
+		//"auth:86e0c630-a919-4074-9503-6e2babe2a800"
 		template.delete(Arrays.asList(authKey, KeyUtils.authKey(auth)));
 	}
 
