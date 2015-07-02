@@ -53,8 +53,15 @@
 
 </div> <!-- /container -->
 
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/plugin/jquery/jquery-1.11.3.min.js"></script>
+<script src="js/plugin/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/plugin/bootstrap-3.3.5-assets/ie10-viewport-bug-workaround.js"></script>
+
+<!-- Custom js for this navbar template -->
+<script src="js/nikey/navbar_fixed_top.js"></script>
 
 </body>
 </html>

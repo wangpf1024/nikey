@@ -31,16 +31,7 @@
 
 <body>
 
-<div class="blog-masthead">
-    <div class="container">
-        <nav class="blog-nav">
-            <img src="img/logo.ico" class="img-circle blog_logo" alt="Nikey">
-            <a class="blog-nav-item" href="/">Home</a>
-            <a class="blog-nav-item" href="/api">API</a>
-            <a class="blog-nav-item active" href="/blog">Blog</a>
-        </nav>
-    </div>
-</div>
+    #include("views/navbar_fixed_top.vm" )
 
 <div class="container">
 
@@ -171,6 +162,9 @@
 <script src="js/plugin/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/plugin/bootstrap-3.3.5-assets/ie10-viewport-bug-workaround.js"></script>
+
+<!-- Custom js for this navbar template -->
+<script src="js/nikey/navbar_fixed_top.js"></script>
 
 </body>
 </html>

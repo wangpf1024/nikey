@@ -25,3 +25,7 @@
     height: 30px;
     margin-top: 6px;
 }
+
+.navbar-inverse{
+    background-color:#428bca;
+}

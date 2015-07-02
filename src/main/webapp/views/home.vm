@@ -33,32 +33,7 @@
 
 <body>
 
-<div class="navbar-wrapper">
-    <div class="container">
-
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                   <img src="img/logo.ico" class="img-circle home_logo" alt="Nikey"><a class="navbar-brand" href="/">Nikey</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/api">API</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-    </div>
-</div>
+    #include("views/navbar_fixed_top.vm" )
 
 
 <!-- Carousel
@@ -184,6 +159,10 @@
 <script src="js/plugin/bootstrap-3.3.5-assets/vendor/holder.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/plugin/bootstrap-3.3.5-assets/ie10-viewport-bug-workaround.js"></script>
+
+<!-- Custom js for this navbar template -->
+<script src="js/nikey/navbar_fixed_top.js"></script>
+
 
 </body>
 </html>
