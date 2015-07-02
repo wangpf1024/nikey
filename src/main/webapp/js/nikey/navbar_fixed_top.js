@@ -13,6 +13,7 @@ if (typeof jQuery === 'undefined') {
 
 
 +function ($) {
+    'use strict';
 
     //定义导航栏对象
     var navbar = function(){

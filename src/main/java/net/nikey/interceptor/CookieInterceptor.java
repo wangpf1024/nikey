@@ -16,13 +16,13 @@
 package net.nikey.interceptor;
 
 
-import net.nikey.annotations.APIAccessCheckRequired;
 import net.nikey.annotations.CookieCheck;
 import net.nikey.bean.NikeySecurity;
 import net.nikey.redis.UserRepository;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
 import net.paoding.rose.web.Invocation;
 import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
@@ -46,6 +46,7 @@ public class CookieInterceptor extends ControllerInterceptorAdapter {
 
 	@Override
 	public Object before(Invocation inv) throws Exception {
+
 		// all non-root requests get analyzed
 		Cookie[] cookies = inv.getRequest().getCookies();
 		if (!ObjectUtils.isEmpty(cookies)) {
@@ -53,19 +54,23 @@ public class CookieInterceptor extends ControllerInterceptorAdapter {
 				if (RETWIS_COOKIE.equals(cookie.getName())) {
 					String auth = cookie.getValue();
 					String name = user.findNameForAuth(auth);
-					if (name != null) {
+					if (StringUtils.hasText(name)) {
 						String uid = user.findUid(name);
-						NikeySecurity.setUser(name, uid);
-						return super.before(inv);
+						if (StringUtils.hasText(uid)) {
+							NikeySecurity.setUser(name, uid);
+							return super.before(inv);
+						}
 					}
 				}
 			}
 		}
-		return "r:/";
+		inv.addFlash("printout", " Cookie has expired" );
+		return "r:/msg";
 	}
 
 	@Override
 	public void afterCompletion(final Invocation inv, Throwable ex) throws Exception {
 		NikeySecurity.clean();
 	}
+
 }

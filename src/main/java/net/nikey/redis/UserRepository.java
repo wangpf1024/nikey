@@ -120,6 +120,8 @@ public class UserRepository {
 	 */
 	public String addAuth(String name) {
 		String uid = findUid(name);
+		//删除已有的认证
+		deleteAuth(name);
 		// add random auth key relation
 		String auth = UUID.randomUUID().toString();
 		valueOps.set(KeyUtils.auth(uid), auth);
@@ -175,6 +177,7 @@ public class UserRepository {
 		String uid = findUid(user);
 		String authKey = KeyUtils.auth(uid);
 		String auth = valueOps.get(authKey);
+		//删除多个key，认证的依赖关系
 		template.delete(Arrays.asList(authKey, KeyUtils.authKey(auth)));
 	}
 

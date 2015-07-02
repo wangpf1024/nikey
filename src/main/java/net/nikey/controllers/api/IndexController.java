@@ -1,9 +1,7 @@
 package net.nikey.controllers.api;
 
 import com.alibaba.fastjson.JSONObject;
-import net.nikey.annotations.APIAccessCheckRequired;
 import net.nikey.annotations.CookieCheck;
-import net.nikey.annotations.NotBlank;
 import net.nikey.bean.Version;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Param;
@@ -28,29 +26,5 @@ public class IndexController {
     public String index(Invocation invocation){
         return "api";
     };
-
-    @Post("/{id:[0-9]+}")
-    @Get("/{id:[0-9]+}")
-    @CookieCheck
-    public String get(Invocation invocation,@Param("id")Integer id){
-        Version v = new Version();
-        v.setId(id);
-        v.setArtifactId("nikey");
-        v.setGroupId("nikey");
-        v.setModelVersion("4.0.0");
-        v.setName("nikey Maven Webapp");
-        v.setPackaging("war");
-        v.setVersion("1.0-SNAPSHOT");
-        return "@json:"+JSONObject.toJSON(v);
-    };
-
-
-    @Post("/add")
-    @Get("/add")
-    @APIAccessCheckRequired
-    public String add(Invocation invocation,Version v){
-        return "@"+v.getId();
-    };
-
 
 }
