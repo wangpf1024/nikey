@@ -15,33 +15,39 @@
  */
 package net.nikey.interceptor;
 
-import javax.inject.Inject;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
+import net.nikey.annotations.APIAccessCheckRequired;
+import net.nikey.annotations.CookieCheck;
 import net.nikey.bean.NikeySecurity;
 import net.nikey.redis.UserRepository;
+import net.paoding.rose.web.ControllerInterceptorAdapter;
+import net.paoding.rose.web.Invocation;
 import org.springframework.util.ObjectUtils;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import javax.inject.Inject;
+import javax.servlet.http.Cookie;
+import java.lang.annotation.Annotation;
+
 
 /**
- * Basic interceptor that checks that each request has been authenticated against Redis.
- * 
- * @author Costin Leau
+ * Cookie 拦截器
  */
-public class CookieInterceptor extends HandlerInterceptorAdapter {
+public class CookieInterceptor extends ControllerInterceptorAdapter {
 
-	public static final String RETWIS_COOKIE = "retwisauth";
+	public static final String RETWIS_COOKIE = "nikeyauth";
 
 	@Inject
-	private UserRepository user;
+	protected UserRepository user;
 
 	@Override
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		// all non-root requests get analyzed
-		Cookie[] cookies = request.getCookies();
+	public Class<? extends Annotation> getRequiredAnnotationClass() {
+		return CookieCheck.class;
+	}
 
+	@Override
+	public Object before(Invocation inv) throws Exception {
+		// all non-root requests get analyzed
+		Cookie[] cookies = inv.getRequest().getCookies();
 		if (!ObjectUtils.isEmpty(cookies)) {
 			for (Cookie cookie : cookies) {
 				if (RETWIS_COOKIE.equals(cookie.getName())) {
@@ -50,16 +56,16 @@ public class CookieInterceptor extends HandlerInterceptorAdapter {
 					if (name != null) {
 						String uid = user.findUid(name);
 						NikeySecurity.setUser(name, uid);
+						return super.before(inv);
 					}
 				}
 			}
 		}
-		return true;
+		return "r:/";
 	}
 
 	@Override
-	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
-			throws Exception {
+	public void afterCompletion(final Invocation inv, Throwable ex) throws Exception {
 		NikeySecurity.clean();
 	}
 }

@@ -27,7 +27,8 @@ public class APIAccessTrackInterceptor extends ControllerInterceptorAdapter {
     @Override
     public Object before(Invocation inv) throws Exception {
         /* TODO .... */
-        return super.before(inv);
+        return "r:/";
+       //return super.before(inv);
     }
 
     @Override

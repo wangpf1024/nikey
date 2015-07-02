@@ -125,5 +125,13 @@ public class homeController {
         return "msg";
     };
 
+    @Get("/signout")
+    public String logout() {
+        String user2 = NikeySecurity.getName();
+        // invalidate auth
+        user.deleteAuth(user2);
+        return "r:/";
+    }
+
 
 }

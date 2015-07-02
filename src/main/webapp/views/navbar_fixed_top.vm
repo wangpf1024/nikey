@@ -16,6 +16,7 @@
                 <li data-p="blog"><a href="/blog">Blog</a></li>
                 <li data-p="signin"><a href="/signin">Sign in</a></li>
                 <li data-p="signup"><a href="/signup">Sign up</a></li>
+                <li data-p="signup"><a href="/signout">Sign out</a></li>
             </ul>
         </div>
     </div>

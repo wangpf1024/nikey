@@ -166,4 +166,16 @@ public class UserRepository {
 		BoundHashOperations<String, String, String> userOps = template.boundHashOps(KeyUtils.uid(uid));
 		return userOps.get("name");
 	}
+
+	/**
+	 * …æ≥˝»œ÷§
+	 * @param user
+	 */
+	public void deleteAuth(String user) {
+		String uid = findUid(user);
+		String authKey = KeyUtils.auth(uid);
+		String auth = valueOps.get(authKey);
+		template.delete(Arrays.asList(authKey, KeyUtils.authKey(auth)));
+	}
+
 }

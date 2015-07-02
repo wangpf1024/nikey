@@ -2,6 +2,7 @@ package net.nikey.controllers.api;
 
 import com.alibaba.fastjson.JSONObject;
 import net.nikey.annotations.APIAccessCheckRequired;
+import net.nikey.annotations.CookieCheck;
 import net.nikey.annotations.NotBlank;
 import net.nikey.bean.Version;
 import net.paoding.rose.web.Invocation;
@@ -23,13 +24,14 @@ public class IndexController {
 
     @Get("")
     @Post("")
+    @CookieCheck
     public String index(Invocation invocation){
         return "api";
     };
 
     @Post("/{id:[0-9]+}")
     @Get("/{id:[0-9]+}")
-    @APIAccessCheckRequired
+    @CookieCheck
     public String get(Invocation invocation,@Param("id")Integer id){
         Version v = new Version();
         v.setId(id);

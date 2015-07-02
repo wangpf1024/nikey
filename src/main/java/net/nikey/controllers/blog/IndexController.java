@@ -1,5 +1,6 @@
 package net.nikey.controllers.blog;
 
+import net.nikey.annotations.APIAccessCheckRequired;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
@@ -16,6 +17,7 @@ import net.paoding.rose.web.annotation.rest.Post;
 public class IndexController {
     @Get("")
     @Post("")
+    @APIAccessCheckRequired
     public String index(Invocation invocation){
         return "blog";
     };
