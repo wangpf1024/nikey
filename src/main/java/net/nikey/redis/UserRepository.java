@@ -121,7 +121,7 @@ public class UserRepository {
 	public String addAuth(String name) {
 		String uid = findUid(name);
 		//删除已有的认证
-		deleteAuth(name);
+		//deleteAuth(name);单客户端登录
 		// add random auth key relation
 		String auth = UUID.randomUUID().toString();
 		valueOps.set(KeyUtils.auth(uid), auth);
