@@ -18,7 +18,7 @@ package net.nikey.redis;
 /**
  * keys π§æﬂ¿‡
  */
-abstract class KeyUtils2 {
+abstract class KeyUtils {
 
 	static final String UID = "uid:";
 

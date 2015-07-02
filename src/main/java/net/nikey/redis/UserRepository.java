@@ -65,9 +65,9 @@ public class UserRepository {
 		this.template = template;
 		valueOps = template.opsForValue();
 		//list集合
-		users = new DefaultRedisList<String>(KeyUtils2.users(), template);
+		users = new DefaultRedisList<String>(KeyUtils.users(), template);
 		//
-		userIdCounter = new RedisAtomicLong(KeyUtils2.globalUid(), template.getConnectionFactory());
+		userIdCounter = new RedisAtomicLong(KeyUtils.globalUid(), template.getConnectionFactory());
 	}
 
 
@@ -77,7 +77,7 @@ public class UserRepository {
 	 * @return
 	 */
 	public boolean isUserValid(String name) {
-		return template.hasKey(KeyUtils2.user(name));
+		return template.hasKey(KeyUtils.user(name));
 	}
 
 	/**
@@ -90,13 +90,13 @@ public class UserRepository {
 		//自增long类型
 		String uid = String.valueOf(userIdCounter.incrementAndGet());
 		// save user as hash
-		//KeyUtils2.uid(uid) 格式："uid:1"
-		BoundHashOperations<String, String, String> userOps = template.boundHashOps(KeyUtils2.uid(uid));
+		//KeyUtils.uid(uid) 格式："uid:1"
+		BoundHashOperations<String, String, String> userOps = template.boundHashOps(KeyUtils.uid(uid));
 		userOps.put("name", name);
 		userOps.put("pass", password);
 
-		//KeyUtils2.user(uid) 格式： "user:001@163.com:uid"
-		valueOps.set(KeyUtils2.user(name), uid);
+		//KeyUtils.user(uid) 格式： "user:001@163.com:uid"
+		valueOps.set(KeyUtils.user(name), uid);
 
 		//集合添加user
 		users.addFirst(name);
@@ -110,7 +110,7 @@ public class UserRepository {
 	 * @return
 	 */
 	public String findUid(String name) {
-		return valueOps.get(KeyUtils2.user(name));
+		return valueOps.get(KeyUtils.user(name));
 	}
 
 	/**
@@ -122,8 +122,8 @@ public class UserRepository {
 		String uid = findUid(name);
 		// add random auth key relation
 		String auth = UUID.randomUUID().toString();
-		valueOps.set(KeyUtils2.auth(uid), auth);
-		valueOps.set(KeyUtils2.authKey(auth), uid);
+		valueOps.set(KeyUtils.auth(uid), auth);
+		valueOps.set(KeyUtils.authKey(auth), uid);
 		return auth;
 	}
 
@@ -137,7 +137,7 @@ public class UserRepository {
 		// find uid
 		String uid = findUid(user);
 		if (StringUtils.hasText(uid)) {
-			BoundHashOperations<String, String, String> userOps = template.boundHashOps(KeyUtils2.uid(uid));
+			BoundHashOperations<String, String, String> userOps = template.boundHashOps(KeyUtils.uid(uid));
 			return userOps.get("pass").equals(pass);
 		}
 
@@ -150,7 +150,7 @@ public class UserRepository {
 	 * @return
 	 */
 	public String findNameForAuth(String value) {
-		String uid = valueOps.get(KeyUtils2.authKey(value));
+		String uid = valueOps.get(KeyUtils.authKey(value));
 		return findName(uid);
 	}
 
@@ -163,7 +163,7 @@ public class UserRepository {
 		if (!StringUtils.hasText(uid)) {
 			return "";
 		}
-		BoundHashOperations<String, String, String> userOps = template.boundHashOps(KeyUtils2.uid(uid));
+		BoundHashOperations<String, String, String> userOps = template.boundHashOps(KeyUtils.uid(uid));
 		return userOps.get("name");
 	}
 }
