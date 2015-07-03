@@ -64,8 +64,7 @@ public class CookieInterceptor extends ControllerInterceptorAdapter {
 				}
 			}
 		}
-		inv.addFlash("printout", " Cookie has expired" );
-		return "r:/msg";
+		return "r:/e1";
 	}
 
 	@Override
