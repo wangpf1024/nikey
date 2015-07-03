@@ -34,8 +34,7 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
 
 ## 安全控制-判断是否已经登录成功
 
-    1.用户登录时创建cookie
-      格式：  
+    1.用户登录时创建cookie 格式：  
       name : nikeyauth 
       value : auth (86e0c630-a919-4074-9503-6e2babe2a800)
       备注：每次用户登录成功后都会创建一个新的认证字符串
