@@ -32,7 +32,7 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
        Value : uid(变量)
 
 
-## 用户安全控制-用户是否已经登录成功
+## 安全控制-判断是否已经登录成功
 
     1.用户登录时创建cookie
       格式：  
