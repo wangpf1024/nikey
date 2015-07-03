@@ -9,7 +9,7 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
         服务器：jetty 
         前台框架： bootstrap 框架布局 ，AngularJs....
 
-## Redis 用户存储介绍 ( KEY + VALUE )  仿 Twitter https://github.com/spring-projects/spring-data-keyvalue-examples
+## Redis 用户存储介绍 ( KEY + VALUE )  仿 Twitter   
 
      1. Hash 结构保存用户信息(save user as hash)
         Key : "uid:id(变量)"
@@ -30,8 +30,10 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
      5.String 结构Auth与用户关联
        Key: "auth:auth(变量)"
        Value : uid(变量)
-
-
+       
+     6.参考demo 
+       https://github.com/spring-projects/spring-data-keyvalue-examples
+     
 ## 安全控制-判断是否已经登录成功
 
     1.用户登录时创建cookie 格式：  
