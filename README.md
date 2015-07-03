@@ -32,4 +32,27 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
        Value : uid(变量)
 
 
-## 用户安全控制
+## 用户安全控制-用户是否已经登录成功
+
+    1.用户登录时创建cookie
+      格式：  
+      name : nikeyauth 
+      value : auth (86e0c630-a919-4074-9503-6e2babe2a800)
+      备注：每次用户登录成功后都会创建一个新的认证字符串
+      
+    2.用户请求拦截器 (net.nikey.interceptor.CookieInterceptor)
+      用户发出请求进入拦截器。拦截器获取cookie值与redis中的最新认证做比较。
+      判断用户是否存在权限。
+      如果通过认证，则将用户的信息保存到一个由 ThreadLocal 方式 维护的对象中
+      (net.nikey.utils.NikeySecurity)。
+      使用ThreadLocal 的 get 方式使用用户信息
+      用户请求结束后将ThreadLocal中的用户信息清除。利于垃圾回收。
+      
+    3.用户退出时将用户认证信息删除
+      
+      
+    
+      
+      
+      
+
