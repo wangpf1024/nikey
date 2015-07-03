@@ -31,7 +31,7 @@
 
 <body>
 
-    #include("views/navbar_fixed_top.vm" )
+    #parse("views/navbar_fixed_top.vm" )
 
 <div class="container">
 

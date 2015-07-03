@@ -33,7 +33,7 @@
 
 <body>
 
-    #include("views/navbar_fixed_top.vm" )
+    #parse("views/navbar_fixed_top.vm" )
 
 
 <!-- Carousel
@@ -93,7 +93,7 @@
             <img class="img-circle" src="img/ok.png" alt="Generic placeholder image" width="140" height="140">
             <h2>Nikye</h2>
             <h4>创始人:Arvin</h4>
-            <p>$slogan</p>
+            <p>$!slogan</p>
             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
