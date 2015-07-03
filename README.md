@@ -7,7 +7,7 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
         后台框架： Rose（支持国产） ，Spring  ,Velocity ，
         数据库：Redis ，Mongodb ， Mysql 。
         服务器：jetty 
-        前台框架： bootstrap 框架布局 ，AngularJs 等等。
+        前台框架： bootstrap 框架布局 ，AngularJs....
 
 ## Redis 用户存储介绍 ( KEY + VALUE )
 
