@@ -3,7 +3,7 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
 
 ## 概述
        
-        java web 项目
+        java web
         开发工具： idea，maven
         后台框架： Rose（支持国产） ，Spring  ,Velocity ，
         数据库：Redis ，Mongodb ， Mysql 。
