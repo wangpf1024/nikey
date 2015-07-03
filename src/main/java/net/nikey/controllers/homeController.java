@@ -3,7 +3,7 @@ package net.nikey.controllers;
 
 
 
-import net.nikey.bean.NikeySecurity;
+import net.nikey.utils.NikeySecurity;
 import net.nikey.interceptor.CookieInterceptor;
 import net.nikey.redis.UserRepository;
 import net.paoding.rose.web.Invocation;

@@ -17,7 +17,7 @@ package net.nikey.interceptor;
 
 
 import net.nikey.annotations.CookieCheck;
-import net.nikey.bean.NikeySecurity;
+import net.nikey.utils.NikeySecurity;
 import net.nikey.redis.UserRepository;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
 import net.paoding.rose.web.Invocation;

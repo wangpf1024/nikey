@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.nikey.bean;
+package net.nikey.utils;
 
 import org.springframework.core.NamedThreadLocal;
 import org.springframework.util.StringUtils;
@@ -61,4 +61,6 @@ public abstract class NikeySecurity {
 	public static void clean() {
 		user.set(null);
 	}
+
+
 }
