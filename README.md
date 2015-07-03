@@ -3,11 +3,11 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
 
 ## 概述
        
-        idea 开发的 maven 项目主要
-        后台使用了 Rose（支持国产） ，Spring  ,Velocity ，
-        数据库使用了Redis ，Mongodb ， Mysql 。
-        前台采用 bootstrap 框架布局，并实现了中英文的国际化
-          
+        java web 项目
+        开发工具： idea，maven
+        后台框架： Rose（支持国产） ，Spring  ,Velocity ，
+        数据库：Redis ，Mongodb ， Mysql 。
+        前台框架： bootstrap 框架布局 ，AngularJs 等等。
 
 ## Redis 用户存储介绍 ( KEY + VALUE )
 
