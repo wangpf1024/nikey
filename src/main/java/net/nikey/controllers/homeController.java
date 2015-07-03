@@ -3,6 +3,7 @@ package net.nikey.controllers;
 
 
 
+import net.nikey.annotations.CookieCheck;
 import net.nikey.utils.NikeySecurity;
 import net.nikey.interceptor.CookieInterceptor;
 import net.nikey.redis.UserRepository;
@@ -126,11 +127,23 @@ public class homeController {
     };
 
     @Get("/signout")
+    @CookieCheck
     public String logout() {
         String user2 = NikeySecurity.getName();
         // invalidate auth
         user.deleteAuth(user2);
         return "r:/";
+    }
+
+    @Get("/issigned")
+    @CookieCheck
+    public String isSigned(Invocation v,Flash flash) {
+        if(NikeySecurity.isSignedIn()){
+            flash.add("printout",NikeySecurity.getName() +"  is signed " );
+            return "r:/msg";
+        }
+        flash.add("printout",NikeySecurity.getName() +"  is not signed " );
+        return "r:/msg";
     }
 
 

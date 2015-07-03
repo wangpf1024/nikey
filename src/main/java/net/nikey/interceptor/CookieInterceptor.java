@@ -31,6 +31,7 @@ import java.lang.annotation.Annotation;
 
 /**
  * Cookie 拦截器
+ * 查询用户登录是否已经过期
  */
 public class CookieInterceptor extends ControllerInterceptorAdapter {
 
@@ -46,7 +47,6 @@ public class CookieInterceptor extends ControllerInterceptorAdapter {
 
 	@Override
 	public Object before(Invocation inv) throws Exception {
-
 		// all non-root requests get analyzed
 		Cookie[] cookies = inv.getRequest().getCookies();
 		if (!ObjectUtils.isEmpty(cookies)) {
@@ -70,6 +70,7 @@ public class CookieInterceptor extends ControllerInterceptorAdapter {
 
 	@Override
 	public void afterCompletion(final Invocation inv, Throwable ex) throws Exception {
+		//情况用户信息临时对象
 		NikeySecurity.clean();
 	}
 
