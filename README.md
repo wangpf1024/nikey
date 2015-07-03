@@ -9,24 +9,24 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
         服务器：jetty 
         前台框架： bootstrap 框架布局 ，AngularJs....
 
-## Redis 用户存储介绍 ( KEY + VALUE )
+## Redis 用户存储介绍 ( KEY + VALUE )  仿 Twitter https://github.com/spring-projects/spring-data-keyvalue-examples
 
      1. Hash 结构保存用户信息(save user as hash)
         Key : "uid:id(变量)"
         Value : hash(key-value) 如："name":"arvin"
-
+        
      2.String 结构保存用户ID
         Key ："user:name(变量):uid"
         Value : id(变量)
-
+        
      3.List 结构保存用户集合
        Key ："users"
        Value :["name"....](变量)
-
+     
      4.String 结构保存Auth (String auth = UUID.randomUUID().toString())
        Key: "uid:id(变量):auth"
        Value : auth(变量)
-
+     
      5.String 结构Auth与用户关联
        Key: "auth:auth(变量)"
        Value : uid(变量)
