@@ -3,8 +3,9 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
 
 ## 概述
        
-           idea 开发的 maven 项目主要使用了 Rose（支持国产） ，Velocity ，  Redis ， Mongodb ， Mysql ， 国际化 
-           采用 bootstrap 框架布局。html5
+               idea 开发的 maven 项目主要使用了 Rose（支持国产） ，Velocity ，
+               Redis ，Mongodb ， Mysql ， 国际化
+               采用 bootstrap 框架布局。html5
           
 
 ## Redis 用户存储介绍 ( KEY + VALUE )
