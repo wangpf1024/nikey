@@ -37,7 +37,7 @@
 
     <div class="starter-template">
         <img class="img-thumbnail" src="img/personal-information.png" alt="Generic placeholder image" >
-        <h1>$printout</h1>
+        <h1>$error.msg</h1>
         <p class="lead"></p>
     </div>
 

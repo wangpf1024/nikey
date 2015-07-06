@@ -30,6 +30,18 @@ import java.util.Map;
 @Path("")
 public class ErrorController {
 
+    //消息显示页
+    @Get("/msg")
+    public String msg(Invocation v,Flash flash){
+        String error = "Sorry ! There is no message for you";
+        if(flash.get("error") != null ){
+            error = flash.get("error");
+        }
+        v.addModel("error.msg", error);
+        return "msg";
+    };
+
+
     @Get("e1")
     @Post("e1")
     public String error_login(Invocation v){
