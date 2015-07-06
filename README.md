@@ -36,21 +36,23 @@ Just do what i feel like.  NIKEY- 解释 ：你可以
      
 ## 安全控制-判断是否已经登录成功
 
-    1.用户登录时创建cookie 格式：  
-      name : nikeyauth 
-      value : auth (86e0c630-a919-4074-9503-6e2babe2a800)
-      备注：每次用户登录成功后都会创建一个新的认证字符串
-      
-    2.用户请求拦截器 (net.nikey.interceptor.LoginRequiredInterceptor)
-      用户发出请求进入拦截器。拦截器获取cookie值与redis中的最新认证做比较。
-      判断用户是否存在权限。
-      如果通过认证，则将用户的信息保存到一个由 ThreadLocal 方式 维护的对象中
-      (net.nikey.utils.NikeySecurity)。
-      使用ThreadLocal 的 get 方式使用用户信息
-      用户请求结束后将ThreadLocal中的用户信息清除。利于垃圾回收。
-      
-    3.用户退出时将用户认证信息删除
-      
+        1.用户登录时创建 cookie 格式：  
+        name : nikeyauth 
+        value : auth (86e0c630-a919-4074-9503-6e2babe2a800)
+        备注：每次用户登录成功后都会创建一个新的认证字符串
+        
+        2.使用Rose拦截器的方式对用户请求拦截(net.nikey.interceptor.LoginRequiredInterceptor)
+        
+        3.创建用户信息临时记录类(net.nikey.utils.NikeySecurity ).用户信息的使用在此类中获取。
+        
+        4.拦截器的使用，从cookie 中获取登录信息与redis中的最新认证做比较。判断用户cookie是否有效。
+        如果有效将用户信息保存到 NikeySecurity 中。Controller 中可以直接使用NikeySecurity获取用户信息。
+        每一次请求过后，将NikeySecurity中的用户信息清空，利与垃圾回收。
+        
+        5.用户退出时将用户认证信息删除
+        
+        6.存在问题，手机端无法使用 cookie
+              
       
     
       
