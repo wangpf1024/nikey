@@ -3,21 +3,14 @@ package net.nikey.controllers;
 
 
 
-import net.nikey.annotations.CookieCheck;
-import net.nikey.utils.NikeySecurity;
-import net.nikey.interceptor.CookieInterceptor;
+import net.nikey.annotations.LoginRequired;
 import net.nikey.redis.UserRepository;
 import net.paoding.rose.web.Invocation;
-import net.paoding.rose.web.annotation.Param;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
 import net.paoding.rose.web.annotation.rest.Post;
-import net.paoding.rose.web.var.Flash;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,15 +23,8 @@ import java.util.Map;
  */
 
 @Path("")
+@LoginRequired
 public class homeController {
-
-    @Autowired
-    private final UserRepository user;
-
-    @Autowired
-    public homeController(UserRepository user) {
-        this.user = user;
-    }
 
     //首页
     @Get("")
@@ -48,17 +34,6 @@ public class homeController {
         v.addModel("slogan", "Just do what you feel like");
         return "home";
     };
-
-    @Get("/issigned")
-    @CookieCheck
-    public String isSigned(Invocation v,Flash flash) {
-        if(NikeySecurity.isSignedIn()){
-            flash.add("error",NikeySecurity.getName() +"  is signed " );
-            return "r:/msg";
-        }
-        flash.add("error",NikeySecurity.getName() +"  is not signed " );
-        return "r:/msg";
-    }
 
 
 }

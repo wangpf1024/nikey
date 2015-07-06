@@ -1,9 +1,8 @@
 package net.nikey.controllers;
 
-import net.nikey.interceptor.CookieInterceptor;
+import net.nikey.annotations.LoginRequired;
 import net.nikey.redis.UserRepository;
 import net.nikey.utils.CookieUtils;
-import net.nikey.utils.NikeySecurity;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Param;
 import net.paoding.rose.web.annotation.Path;
@@ -13,7 +12,6 @@ import net.paoding.rose.web.var.Flash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -21,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * 用户登录控制层
  */
 @Path("/signin")
+@LoginRequired
 public class SigninController {
 
     @Autowired

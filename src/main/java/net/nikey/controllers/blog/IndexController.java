@@ -1,10 +1,10 @@
 package net.nikey.controllers.blog;
 
-import net.nikey.annotations.CookieCheck;
+import net.nikey.annotations.LoginRequired;
+import net.nikey.utils.NikeySecurity;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
-import net.paoding.rose.web.annotation.rest.Post;
 
 /**
  * Created by arvin on 2015/6/29.
@@ -14,11 +14,13 @@ import net.paoding.rose.web.annotation.rest.Post;
  * @since  2015/6/29
  */
 @Path("")
+@LoginRequired
 public class IndexController {
     @Get("")
-    @Post("")
-    @CookieCheck
     public String index(Invocation invocation){
+        if(!NikeySecurity.isSignedIn()){
+            return "r:/e1";
+        }
         return "blog";
     };
 }

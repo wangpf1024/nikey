@@ -1,5 +1,6 @@
 package net.nikey.controllers;
 
+import net.nikey.annotations.LoginRequired;
 import net.nikey.redis.UserRepository;
 import net.nikey.utils.CookieUtils;
 import net.paoding.rose.web.Invocation;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * 用户注册控制层
  */
 @Path("/signup")
+@LoginRequired
 public class SignnupController {
 
     @Autowired

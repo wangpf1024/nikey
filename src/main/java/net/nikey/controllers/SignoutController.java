@@ -1,6 +1,6 @@
 package net.nikey.controllers;
 
-import net.nikey.annotations.CookieCheck;
+import net.nikey.annotations.LoginRequired;
 import net.nikey.redis.UserRepository;
 import net.nikey.utils.NikeySecurity;
 import net.paoding.rose.web.annotation.Path;
@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * 用户退出控制层
  */
 @Path("/signout")
+@LoginRequired
 public class SignoutController {
 
 
@@ -24,7 +25,6 @@ public class SignoutController {
     }
 
     @Get("")
-    @CookieCheck
     public String logout() {
         String user2 = NikeySecurity.getName();
         // invalidate auth

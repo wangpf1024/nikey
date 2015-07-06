@@ -1,13 +1,10 @@
 package net.nikey.controllers.api;
 
-import com.alibaba.fastjson.JSONObject;
-import net.nikey.annotations.CookieCheck;
-import net.nikey.bean.Version;
+import net.nikey.annotations.LoginRequired;
+import net.nikey.utils.NikeySecurity;
 import net.paoding.rose.web.Invocation;
-import net.paoding.rose.web.annotation.Param;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
-import net.paoding.rose.web.annotation.rest.Post;
 
 /**
  * Created by arvin on 2015/6/23.
@@ -18,12 +15,14 @@ import net.paoding.rose.web.annotation.rest.Post;
  */
 
 @Path("")
+@LoginRequired
 public class IndexController {
 
     @Get("")
-    @Post("")
-    @CookieCheck
     public String index(Invocation invocation){
+        if(!NikeySecurity.isSignedIn()){
+            return "r:/e1";
+        }
         return "api";
     };
 

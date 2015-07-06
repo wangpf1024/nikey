@@ -16,7 +16,7 @@
 package net.nikey.interceptor;
 
 
-import net.nikey.annotations.CookieCheck;
+import net.nikey.annotations.LoginRequired;
 import net.nikey.utils.NikeySecurity;
 import net.nikey.redis.UserRepository;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
@@ -33,7 +33,7 @@ import java.lang.annotation.Annotation;
  * Cookie 拦截器
  * 查询用户登录是否已经过期
  */
-public class CookieInterceptor extends ControllerInterceptorAdapter {
+public class LoginRequiredInterceptor extends ControllerInterceptorAdapter {
 
 	public static final String RETWIS_COOKIE = "nikeyauth";
 
@@ -42,7 +42,7 @@ public class CookieInterceptor extends ControllerInterceptorAdapter {
 
 	@Override
 	public Class<? extends Annotation> getRequiredAnnotationClass() {
-		return CookieCheck.class;
+		return LoginRequired.class;
 	}
 
 	@Override
@@ -57,6 +57,7 @@ public class CookieInterceptor extends ControllerInterceptorAdapter {
 					if (StringUtils.hasText(name)) {
 						String uid = user.findUid(name);
 						if (StringUtils.hasText(uid)) {
+							inv.addModel("isSignedIn",true);
 							NikeySecurity.setUser(name, uid);
 							return super.before(inv);
 						}
@@ -64,12 +65,13 @@ public class CookieInterceptor extends ControllerInterceptorAdapter {
 				}
 			}
 		}
-		return "r:/e1";
+		inv.addModel("isSignedIn",false);
+		return super.before(inv);
 	}
 
 	@Override
 	public void afterCompletion(final Invocation inv, Throwable ex) throws Exception {
-		//情况用户信息临时对象
+		//清空用户信息临时对象
 		NikeySecurity.clean();
 	}
 

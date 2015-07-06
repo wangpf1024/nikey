@@ -1,23 +1,12 @@
 package net.nikey.controllers;
 
 
-import net.nikey.annotations.CookieCheck;
-import net.nikey.interceptor.CookieInterceptor;
-import net.nikey.redis.UserRepository;
-import net.nikey.utils.NikeySecurity;
+import net.nikey.annotations.LoginRequired;
 import net.paoding.rose.web.Invocation;
-import net.paoding.rose.web.annotation.Param;
 import net.paoding.rose.web.annotation.Path;
 import net.paoding.rose.web.annotation.rest.Get;
 import net.paoding.rose.web.annotation.rest.Post;
 import net.paoding.rose.web.var.Flash;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by arvin on 2015/7/13
@@ -28,6 +17,7 @@ import java.util.Map;
  */
 
 @Path("")
+@LoginRequired
 public class ErrorController {
 
     //消息显示页
@@ -37,7 +27,7 @@ public class ErrorController {
         if(flash.get("error") != null ){
             error = flash.get("error");
         }
-        v.addModel("error.msg", error);
+        v.addModel("errorMsg", error);
         return "msg";
     };
 

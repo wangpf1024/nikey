@@ -1,6 +1,6 @@
 package net.nikey.utils;
 
-import net.nikey.interceptor.CookieInterceptor;
+import net.nikey.interceptor.LoginRequiredInterceptor;
 import net.nikey.redis.UserRepository;
 
 import javax.servlet.http.Cookie;
@@ -20,7 +20,7 @@ public class CookieUtils {
      */
     public static void addAuthCookie(String auth, String name, HttpServletResponse response,UserRepository user) {
         NikeySecurity.setUser(name, user.findUid(name));
-        Cookie cookie = new Cookie(CookieInterceptor.RETWIS_COOKIE, auth);
+        Cookie cookie = new Cookie(LoginRequiredInterceptor.RETWIS_COOKIE, auth);
         cookie.setComment("nikey - demo");
         // cookie valid for up to 1 week
         cookie.setMaxAge(60 * 60 * 24 * 7);
