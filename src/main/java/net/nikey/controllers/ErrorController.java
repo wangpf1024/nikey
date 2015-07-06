@@ -36,11 +36,4 @@ public class ErrorController {
         return "error_login";
     };
 
-    @Get("e4")
-    @Post("e4")
-    public String unfound(Invocation v){
-        return "error_404";
-    };
-
-
 }

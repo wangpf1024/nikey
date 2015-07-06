@@ -31,14 +31,11 @@
 
 <body>
 
-    #parse("views/navbar_fixed_top.vm" )
-
 <div class="container">
 
     <div class="starter-template">
         <img class="img-thumbnail" src="img/404.png" alt="Generic placeholder image" >
-        <h1>#springMessage('error.login')</h1>
-        <p class="lead"></p>
+        <p class="lead"><h1>404</h1></p>
     </div>
 
 </div><!-- /.container -->
