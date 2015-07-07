@@ -43,8 +43,8 @@ public class SigninController {
         // add tracing cookie
         if (user.auth(name, pass)) {
             CookieUtils.addAuthCookie(user.addAuth(name), name, response, user);
-            flash.add("error", "  Congratulations ! ");
-            return "r:/room/"+ NikeySecurity.getUid();
+            String uid = NikeySecurity.getUid();
+            return "r:/module/"+uid;
         }
         else if (StringUtils.hasText(name) || StringUtils.hasText(pass)) {
             flash.add("error","Failed ");

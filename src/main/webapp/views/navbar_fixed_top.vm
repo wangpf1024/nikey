@@ -14,13 +14,12 @@
                 <li data-p="Home"><a href="/">#springMessage('home')</a></li>
                 <li data-p="api"><a href="/api">#springMessage('api')</a></li>
                 #if($isSignedIn)
-                    <li data-p="room"><a href="/room/$uid">#springMessage('my.room')</a></li>
+                    <li data-p="module"><a href="/module/$uid">#springMessage('my.module')</a></li>
                     <li data-p="signout"><a href="/signout">#springMessage('signout')</a></li>
                 #elseif(!$isSignedIn)
                     <li data-p="signin"><a href="/signin">#springMessage('signin')</a></li>
                     <li data-p="signup"><a href="/signup">#springMessage('signup')</a></li>
                 #end
-
             </ul>
         </div>
     </div>
