@@ -13,7 +13,6 @@
             <ul class="nav navbar-nav navbar-right">
                 <li data-p="Home"><a href="/">#springMessage('home')</a></li>
                 <li data-p="api"><a href="/api">#springMessage('api')</a></li>
-                <li data-p="blog"><a href="/blog">#springMessage('blog')</a></li>
                 #if($isSignedIn)
                     <li data-p="room"><a href="/room/$uid">#springMessage('my.room')</a></li>
                     <li data-p="signout"><a href="/signout">#springMessage('signout')</a></li>
