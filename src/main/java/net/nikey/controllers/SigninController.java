@@ -3,6 +3,7 @@ package net.nikey.controllers;
 import net.nikey.annotations.LoginRequired;
 import net.nikey.redis.UserRepository;
 import net.nikey.utils.CookieUtils;
+import net.nikey.utils.NikeySecurity;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Param;
 import net.paoding.rose.web.annotation.Path;
@@ -43,7 +44,7 @@ public class SigninController {
         if (user.auth(name, pass)) {
             CookieUtils.addAuthCookie(user.addAuth(name), name, response, user);
             flash.add("error", "  Congratulations ! ");
-            return "r:/msg";
+            return "r:/room/"+ NikeySecurity.getUid();
         }
         else if (StringUtils.hasText(name) || StringUtils.hasText(pass)) {
             flash.add("error","Failed ");

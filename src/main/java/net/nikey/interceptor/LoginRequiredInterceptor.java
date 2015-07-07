@@ -58,6 +58,7 @@ public class LoginRequiredInterceptor extends ControllerInterceptorAdapter {
 						String uid = user.findUid(name);
 						if (StringUtils.hasText(uid)) {
 							inv.addModel("isSignedIn",true);
+							inv.addModel("uid",uid);
 							NikeySecurity.setUser(name, uid);
 							return super.before(inv);
 						}

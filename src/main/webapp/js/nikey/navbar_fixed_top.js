@@ -25,7 +25,13 @@ if (typeof jQuery === 'undefined') {
         //对象方法
         this.init = function(){
             if(this.$pathname){
-                this.$active = this.$pathname;
+                var i = this.$pathname.indexOf("/");
+                //二级目录
+                if(i > 0){
+                    this.$active = this.$pathname.substr(0,i);
+                }else{
+                    this.$active = this.$pathname;//一级目录
+                };
             };
         };
     }

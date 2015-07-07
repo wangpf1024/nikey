@@ -12,15 +12,15 @@
     <title>Nikey</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="js/plugin/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/js/plugin/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/signin.css" rel="stylesheet">
-    <link href="css/nikey.css" rel="stylesheet">
+    <link href="/css/signin.css" rel="stylesheet">
+    <link href="/css/nikey.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/plugin/bootstrap-3.3.5-assets/ie-emulation-modes-warning.js"></script>
+    <script src="/js/plugin/bootstrap-3.3.5-assets/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -54,14 +54,14 @@
 </div> <!-- /container -->
 
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/plugin/jquery/jquery-1.11.3.min.js"></script>
-<script src="js/plugin/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="/js/plugin/jquery/jquery-1.11.3.min.js"></script>
+<script src="/js/plugin/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="js/plugin/bootstrap-3.3.5-assets/ie10-viewport-bug-workaround.js"></script>
+<script src="/js/plugin/bootstrap-3.3.5-assets/ie10-viewport-bug-workaround.js"></script>
 
 <!-- Custom js for this navbar template -->
-<script src="js/nikey/navbar_fixed_top.js"></script>
+<script src="/js/nikey/navbar_fixed_top.js"></script>
 
 </body>
 </html>

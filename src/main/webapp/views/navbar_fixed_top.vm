@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="img/logo.ico" class="img-circle api_logo" alt="Nikey"><a class="navbar-brand" href="/">Nikey</a>
+            <img src="/img/logo.ico" class="img-circle api_logo" alt="Nikey"><a class="navbar-brand" href="/">Nikey</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -15,6 +15,7 @@
                 <li data-p="api"><a href="/api">#springMessage('api')</a></li>
                 <li data-p="blog"><a href="/blog">#springMessage('blog')</a></li>
                 #if($isSignedIn)
+                    <li data-p="room"><a href="/room/$uid">#springMessage('my.room')</a></li>
                     <li data-p="signout"><a href="/signout">#springMessage('signout')</a></li>
                 #elseif(!$isSignedIn)
                     <li data-p="signin"><a href="/signin">#springMessage('signin')</a></li>
