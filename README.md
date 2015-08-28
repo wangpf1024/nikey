@@ -1,5 +1,5 @@
 # nikey ~ java webapp
-Just do what i feel like.  NIKEY- 解释 ：你可以
+仿 Twitter 用户登录管理
 
 ## 开发环境
 
